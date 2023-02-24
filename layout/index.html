@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar AXIOS</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+        const url = 'http://localhost:8000/api/pelanggan';
+        const token = 'WhHfSQqegYkQINLuYHaLK8WrKB6OGD2szkzr3Pux';
+
+        axios({
+            method:'get',
+            url:url,
+            headers:{
+                'api_token' : token
+            }
+        }).then(res=>console.log(res))
+
+    </script>
+    
+</body>
+</html>
