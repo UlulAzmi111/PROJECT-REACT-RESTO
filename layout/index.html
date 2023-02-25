@@ -117,7 +117,7 @@
             link.post('/pelanggan',tambah).then(res=>{
                 console.log(res);
 
-                let tampil = `<h1>${res.data.pesan}</h1>`;
+                let tampil = `<h1 class="display-6 mb-3">${res.data.pesan}</h1>`;
                 tampil +=   `<table class="table table-bordered"><tr>
                                 <th>Pelanggan</th>
                                 <th>Alamat</th>
@@ -136,11 +136,25 @@
             });
         }
 
+        function hapus() {
+            let id = 315;
+
+            link.delete('/pelanggan/'+id).then(res=>{
+                console.log(res);
+
+                let muncul = `<h1 class="display-6">${res.data.pesan}</h1>`;
+
+                document.querySelector('#out').innerHTML = muncul;
+            })
+        }
+
         document.querySelector('#get').addEventListener('click', get);
 
         document.querySelector('#show').addEventListener('click', show);
 
         document.querySelector('#post').addEventListener('click', post);
+
+        document.querySelector('#delete').addEventListener('click', hapus);
 
     </script>
     
