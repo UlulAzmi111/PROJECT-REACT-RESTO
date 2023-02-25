@@ -148,6 +148,23 @@
             })
         }
 
+        function ubah() {
+            let id = 303;
+            let data = {
+                pelanggan : 'Ulul Azmi',
+                alamat : 'Pagerwojo - Buduran - Sidoarjo',
+                telp : '+62879453765'
+            }
+
+            link.put('/pelanggan/'+id, data).then(res=>{
+                console.log(res);
+
+                let tampill = `<h3 class="display-6">${res.data.pesan}</h3>`;
+
+                document.querySelector('#out').innerHTML = tampill;
+            })
+        }
+
         document.querySelector('#get').addEventListener('click', get);
 
         document.querySelector('#show').addEventListener('click', show);
@@ -155,6 +172,8 @@
         document.querySelector('#post').addEventListener('click', post);
 
         document.querySelector('#delete').addEventListener('click', hapus);
+
+        document.querySelector('#update').addEventListener('click', ubah);
 
     </script>
     
